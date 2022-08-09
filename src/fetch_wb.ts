@@ -26,40 +26,11 @@ export async function fetchWB() {
   const hash = createHash("md5").update(text).digest("hex");
   console.log(`fetched list document with hash: ${hash}`);
 
-  // // Update the hash in the document
-  // await db.collection("list").doc(listId).set({
-  //   lastUpdateHash: hash,
-  // });
   let res: { [key: string]: any }[] = [];
   // update docs in the batch
-  const batches: Array<Array<any>> = [[]];
   data.forEach((item: any) => {
-    // create the new batch if required
-    // if (batches[batches.length - 1].length >= FIRESTORE_WRITE_BATCH_SIZE) {
-    //   batches.push([]);
-    // }
-
-    // // now get the last batch and add the doc in that
-    // const lastBatch = batches[batches.length - 1];
-    // lastBatch.push(item);
     res.push(item);
   });
 
-  // // start writing in batches for faster writes
-  // // iterate over batches
-  // for (const docs of batches) {
-  //   const firestoreBatch = db.batch();
-  //   docs.forEach((doc: any) => {
-  //     var docRef: DocumentReference = db
-  //       .collection("list")
-  //       .doc(listId)
-  //       .collection("item")
-  //       .doc(doc?.SUPP_ID?.toString());
-  //     firestoreBatch.set(docRef, doc);
-  //   });
-
-  //   // write the batch to firestore
-  //   await firestoreBatch.commit();
-  // }
   return res;
 }

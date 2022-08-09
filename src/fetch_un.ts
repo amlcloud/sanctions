@@ -25,25 +25,8 @@ export async function fetchUN(): Promise<{ [key: string]: any }[]> {
       console.log(`individuals count: ${individualsArray.length}`)
 
       for (const ind of individualsArray) {
-        //console.log(ind['DATAID']);
         res.push(ind);
-        // const itmRef = db
-        //   .collection('list')
-        //   .doc(listId)
-        //   .collection('item').doc(ind['DATAID']);
 
-
-        // await itmRef.set(
-        //   ind
-        // );
-
-        // let fullName: string = '';
-        // ['FIRST_NAME', 'SECOND_NAME', 'THIRD_NAME'].forEach((name: string) => {
-
-        //   if (ind[name] !== undefined)
-        //     fullName += ' ' + ind[name].toString().trim();
-        // });
-        // fullName = fullName.trim();
 
       }
 
