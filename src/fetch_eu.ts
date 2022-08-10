@@ -2,7 +2,7 @@ var nodeFetch = require("node-fetch");
 var xml2js = require("xml2js");
 var jp = require('jsonpath');
 
-//Do the comment
+//To map the "item" element in parsing url xml 
 type UrlItem = {
     title: string;
     link: string;
@@ -10,13 +10,14 @@ type UrlItem = {
     enclosure: Enclosure;
 }
 
-//Do the comment
+////To map the "enclosure" element in parsing url xml 
 type Enclosure = {
     url: string;
     length: number;
     type: string;
 }
 export async function fetchEU(): Promise<{ [key: string]: any }[]> {
+
     const url: string = await getInitialUrl();
     const response = await nodeFetch(url);
     const bodyXML = await response.text();
@@ -30,13 +31,14 @@ export async function fetchEU(): Promise<{ [key: string]: any }[]> {
             res.push(arrIndividuals);
             resolve(res)
         });
-
-    }
-
-    );
-
+    });
 }
-//Add comment
+
+/**
+ * 
+ * @returns Parsing url
+ * Using jsonpath to get the value of url
+ */
 async function getInitialUrl(): Promise<string> {
 
     const response = await nodeFetch('https://webgate.ec.europa.eu/fsd/fsf/public/rss');
@@ -46,7 +48,6 @@ async function getInitialUrl(): Promise<string> {
     try {
         xml2js.parseString(bodyXML, { explicitArray: false, ignoreAttrs: false, mergeAttrs: true }, (error: any, result: any) => {
             if (error) throw (error);
-
             var matches = (jp.value(result, '$..channel..item'));
             matches.forEach(function (item: UrlItem) {
                 if (item.title === 'XML (Based on XSD) - v1.1') {
