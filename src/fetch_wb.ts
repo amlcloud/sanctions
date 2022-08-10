@@ -32,7 +32,7 @@ export async function fetchWB() {
   // });
   let res: { [key: string]: any }[] = [];
   // update docs in the batch
-  const batches: Array<Array<any>> = [[]];
+  // const batches: Array<Array<any>> = [[]];
   data.forEach((item: any) => {
     // create the new batch if required
     // if (batches[batches.length - 1].length >= FIRESTORE_WRITE_BATCH_SIZE) {

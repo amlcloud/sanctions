@@ -1,77 +1,65 @@
-// import * as functions from "firebase-functions";
-// var nodeFetch = require("node-fetch");
-// import { db } from "./index";
-// import { createHash } from "node:crypto";
-// import { DocumentReference } from "firebase-admin/firestore";
+var nodeFetch = require("node-fetch");
+var xml2js = require("xml2js");
+var jp = require('jsonpath');
 
+//Do the comment
+type UrlItem = {
+    title: string;
+    link: string;
+    description: string;
+    enclosure: Enclosure;
+}
 
-// exports.fetch_eu_list =
-//   functions.pubsub.schedule("every 1 hour").onRun(async () => {
+//Do the comment
+type Enclosure = {
+    url: string;
+    length: number;
+    type: string;
+}
+export async function fetchEU(): Promise<{ [key: string]: any }[]> {
+    const url: string = await getInitialUrl();
+    const response = await nodeFetch(url);
+    const bodyXML = await response.text();
+    let res: { [key: string]: any }[] = [];
 
-//     await fetchEU();
-//     return null;
-//   });
+    return new Promise((resolve, _reject) => {
+        return xml2js.parseString(bodyXML, { explicitArray: false, ignoreAttrs: false, mergeAttrs: true }, async (_errror: any, result: any) => {
+            console.log("Arr Individuals");
+            const arrIndividuals = result["export"]["sanctionEntity"];
+            console.log(arrIndividuals);
+            res.push(arrIndividuals);
+            resolve(res)
+        });
 
-// export async function fetchEU() {
-//   const listId = 'worldbank.org';
-//   // some configs
-//   const API_URL =
-//     "https://apigwext.worldbank.org/dvsvc/v1.0/json/APPLICATION/ADOBE_EXPRNCE_MGR/FIRM/SANCTIONED_FIRM";
-//   const API_KEY = "z9duUaFUiEUYSHs97CU38fcZO7ipOPvm";
-//   const FIRESTORE_WRITE_BATCH_SIZE = 500; // firestore allows 500 writes in batch
+    }
 
-//   // Make the API Call
-//   const response = await nodeFetch(API_URL, {
-//     method: "GET",
-//     headers: new nodeFetch.Headers({
-//       apiKey: API_KEY,
-//     }),
-//   });
+    );
 
-//   // get the data
-//   const text = await response.text();
-//   const responseJson = JSON.parse(text);
-//   const data = responseJson?.response?.ZPROCSUPP || [];
-//   console.log(`items found: ${data.length}`);
+}
+//Add comment
+async function getInitialUrl(): Promise<string> {
 
-//   // Generate the hash in the list document
-//   const hash = createHash("md5").update(text).digest("hex");
-//   console.log(`fetched list document with hash: ${hash}`);
+    const response = await nodeFetch('https://webgate.ec.europa.eu/fsd/fsf/public/rss');
+    const bodyXML = await response.text();
 
-//   // Update the hash in the document
-//   await db.collection("list").doc(listId).set({
-//     lastUpdateHash: hash,
-//   });
+    var url = ""
+    try {
+        xml2js.parseString(bodyXML, { explicitArray: false, ignoreAttrs: false, mergeAttrs: true }, (error: any, result: any) => {
+            if (error) throw (error);
 
-//   // update docs in the batch
-//   const batches: Array<Array<any>> = [[]];
-//   data.forEach((item: any) => {
-//     // create the new batch if required
-//     if (batches[batches.length - 1].length >= FIRESTORE_WRITE_BATCH_SIZE) {
-//       batches.push([]);
-//     }
+            var matches = (jp.value(result, '$..channel..item'));
+            matches.forEach(function (item: UrlItem) {
+                if (item.title === 'XML (Based on XSD) - v1.1') {
+                    var enclosure: Enclosure = item["enclosure"]
+                    url = enclosure.url;
+                }
+            })
 
-//     // now get the last batch and add the doc in that
-//     const lastBatch = batches[batches.length - 1];
-//     lastBatch.push(item);
-//   });
+            return url;
+        });
+    } catch (e: any) {
+        return e.message;
+    }
+    return url;
+}
 
-//   // start writing in batches for faster writes
-//   // iterate over batches
-//   for (const docs of batches) {
-//     const firestoreBatch = db.batch();
-//     docs.forEach((doc: any) => {
-//       var docRef: DocumentReference = db
-//         .collection("list")
-//         .doc(listId)
-//         .collection("item")
-//         .doc(doc?.SUPP_ID?.toString());
-//       firestoreBatch.set(docRef, doc);
-//     });
-
-//     // write the batch to firestore
-//     await firestoreBatch.commit();
-//   }
-
-//   console.log(`res: batch writing complete`);
-// }

@@ -3,7 +3,6 @@ import * as Xml2js from 'xml2js';
 import { createHash } from 'node:crypto';
 
 export async function fetchUN(): Promise<{ [key: string]: any }[]> {
-  const listId: string = 'scsanctions.un.org';
   const response = await nodeFetch('https://scsanctions.un.org/resources/xml/en/consolidated.xml');
   const bodyXML = await response.text();
 
