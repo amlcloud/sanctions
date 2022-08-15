@@ -25,10 +25,10 @@ export async function fetchEU(): Promise<{ [key: string]: any }[]> {
 
     return new Promise((resolve, _reject) => {
         return xml2js.parseString(bodyXML, { explicitArray: false, ignoreAttrs: false, mergeAttrs: true }, async (_errror: any, result: any) => {
-            console.log("Arr Individuals");
+
             const arrIndividuals = result["export"]["sanctionEntity"];
-            console.log(arrIndividuals);
-            res.push(arrIndividuals);
+            for(var item of arrIndividuals) 
+            res.push(item);
             resolve(res)
         });
     });
