@@ -40,7 +40,7 @@ export async function fetchNL(): Promise<{ [key: string]: any }[]> {
   let res: { [key: string]: any }[] = [];
   for (let value of nlIndividuals) {
     var data = JSON.parse(JSON.stringify(value));
-    console.log(data);
+  
     const person: NlIndividual = {};
 
     person.surname = data["Surname"];
@@ -51,7 +51,7 @@ export async function fetchNL(): Promise<{ [key: string]: any }[]> {
     person.linkOfOfficialNotification = data["Link official notification"];
 
     console.log(person);
-
+    res.push(person);
   }
   return Promise.resolve(res);
 }
