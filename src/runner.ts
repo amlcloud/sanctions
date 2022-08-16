@@ -8,6 +8,10 @@ if (argv.au !== undefined) {
   console.log(`fetch au list...`);
   require('../lib/fetch_au').fetchAU();
 }
+if (argv.eu !== undefined) {
+  console.log(`fetch eu list...`);
+  require('../lib/fetch_eu').fetchEU();
+}
 
 
 

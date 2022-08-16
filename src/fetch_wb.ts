@@ -28,6 +28,7 @@ export async function fetchWB() {
 
   let res: { [key: string]: any }[] = [];
   // update docs in the batch
+  // const batches: Array<Array<any>> = [[]];
   data.forEach((item: any) => {
     res.push(item);
   });

@@ -12,20 +12,22 @@
     "test": "mocha --reporter spec",
     "test-nl": "mocha ./test/fetch_nl.test.js  --reporter spec",
     "au": "node ./lib/runner.js --au",
-    "wb": "node ./lib/runner.js --wb"
+    "wb": "node ./lib/runner.js --wb",
+    "eu": "node ./lib/runner.js --eu"
   },
   "engines": {
     "node": "16"
   },
   "main": "lib/index.js",
   "dependencies": {
+    "axios": "^0.27.2",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
+    "jsonpath": "^1.1.1",
     "node-fetch": "^2.6.1",
     "spreadsheet-stream": "^1.0.2",
     "xlsx": "^0.18.5",
-    "xml2js": "^0.4.23",
-    "axios": "^0.27.2"
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@types/xml2js": "^0.4.11",
