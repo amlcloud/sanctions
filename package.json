@@ -12,7 +12,9 @@
     "test": "mocha --reporter spec",
     "test-nl": "mocha ./test/fetch_nl.test.js  --reporter spec",
     "au": "node ./lib/runner.js --au",
-    "wb": "node ./lib/runner.js --wb"
+    "wb": "node ./lib/runner.js --wb",
+    "ca": "node ./lib/runner.js --ca",
+    "sdn": "node ./lib/runner.js --sdn"
   },
   "engines": {
     "node": "16"
