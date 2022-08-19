@@ -12,6 +12,9 @@ if (argv.eu !== undefined) {
   console.log(`fetch eu list...`);
   require('../lib/fetch_eu').fetchEU();
 }
-
+if (argv.calaw !== undefined) {
+  console.log(`fetch ca law list...`);
+  require('../lib/fetch_ca_law').fetchCAlaw();
+}
 
 
