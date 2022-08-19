@@ -14,7 +14,8 @@
     "au": "node ./lib/runner.js --au",
     "wb": "node ./lib/runner.js --wb",
     "eu": "node ./lib/runner.js --eu",
-    "usa": "node ./lib/runner.js --usa"
+    "usadef": "node ./lib/runner.js --usadef",
+    "calaw": "node ./lib/runner.js --calaw"
   },
   "engines": {
     "node": "16"

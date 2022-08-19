@@ -17,5 +17,9 @@ if (argv.usa !== undefined) {
   require('../lib/fetch_usa').fetchUSA();
 }
 
+if (argv.calaw !== undefined) {
+  console.log(`fetch ca law list...`);
+  require('../lib/fetch_ca_law').fetchCAlaw();
+}
 
 
