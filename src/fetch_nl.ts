@@ -1,5 +1,5 @@
-var nodeFetch = require("node-fetch");
-var XLSX = require("xlsx");
+const nodeFetch = require("node-fetch");
+const XLSX = require("xlsx");
 
 type NlIndividual = {
   surname?: string;
@@ -12,35 +12,36 @@ type NlIndividual = {
 }
 
 export async function fetchNL(): Promise<{ [key: string]: any }[]> {
-
-  const response = await nodeFetch('https://www.government.nl/binaries/government/documenten/reports/2016/01/15/national-terrorism-list/eng-terrorismelijst.ods');
+  // eslint-disable-next-line max-len
+  const response = await nodeFetch("https://www.government.nl/binaries/government/documenten/reports/2016/01/15/national-terrorism-list/eng-terrorismelijst.ods");
   const bodyXML = await response.arrayBuffer();
 
 
-  var workbook = XLSX.read(bodyXML, { raw: true, cellText: false, cellDates: true });
-  var ws = workbook.Sheets['Sheet1'];
+  const workbook = XLSX.read(bodyXML, { raw: true, cellText: false, cellDates: true });
+  const ws = workbook.Sheets["Sheet1"];
 
-  //Skipping the first row: Headers are starting from A3
-  var range = XLSX.utils.decode_range(ws['!ref']);
+  // Skipping the first row: Headers are starting from A3
+  const range = XLSX.utils.decode_range(ws["!ref"]);
   range.s.r = 2;
-  var new_range = XLSX.utils.encode_range(range);
+  const newRange = XLSX.utils.encode_range(range);
 
-  //To extract the URL of hyperlink cells
+  // To extract the URL of hyperlink cells
   const cells = Object.keys(ws);
-  cells.forEach(cell => {
+  cells.forEach((cell) => {
     if (ws[cell].l && ws[cell].l.Target) {
       ws[cell].v = ws[cell].l.Target;
     }
-  })
-  //Converting sheet to json
-  var nlIndividuals = XLSX.utils.sheet_to_json(ws, {
-    blankRows: false, defval: '', range: new_range, raw: true,
+  });
+
+  // Converting sheet to json
+  const nlIndividuals = XLSX.utils.sheet_to_json(ws, {
+    blankRows: false, defval: "", range: newRange, raw: true,
   });
 
   let res: { [key: string]: any }[] = [];
   for (let value of nlIndividuals) {
-    var data = JSON.parse(JSON.stringify(value));
-  
+    let data = JSON.parse(JSON.stringify(value));
+
     const person: NlIndividual = {};
 
     person.surname = data["Surname"];
@@ -53,5 +54,6 @@ export async function fetchNL(): Promise<{ [key: string]: any }[]> {
     console.log(person);
     res.push(person);
   }
+
   return Promise.resolve(res);
 }
