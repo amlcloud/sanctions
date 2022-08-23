@@ -1,4 +1,4 @@
-var nodeFetch = require("node-fetch");
+const nodeFetch = require("node-fetch");
 import { createHash } from "node:crypto";
 
 
