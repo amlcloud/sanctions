@@ -17,7 +17,8 @@
     "uk": "node ./lib/runner.js --uk",
     "nl": "node ./lib/runner.js --nl",
     "usadef": "node ./lib/runner.js --usadef",
-    "calaw": "node ./lib/runner.js --calaw"
+    "calaw": "node ./lib/runner.js --calaw",
+    "usabis": "node ./lib/runner.js --usabis"
   },
   "engines": {
     "node": "16"
@@ -25,6 +26,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "axios": "^0.27.2",
+    "csv-parser": "^3.0.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
     "jsonpath": "^1.1.1",

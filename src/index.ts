@@ -9,3 +9,5 @@ export { fetchNL } from "./fetch_nl";
 export { fetchUSA } from "./fetch_usa";
 
 export { fetchUK } from "./fetch_uk";
+
+export { fetchUsaBis } from './fetch_usa_bis';

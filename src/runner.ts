@@ -8,6 +8,7 @@ import { fetchEU } from "./fetch_eu";
 import { fetchCAlaw } from "./fetch_ca_law";
 import { fetchUSA } from "./fetch_usa";
 import { fetchNL } from "./fetch_nl";
+import { fetchUsaBis } from "./fetch_usa_bis";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -37,4 +38,9 @@ if (argv.uk !== undefined) {
 if (argv.nl !== undefined) {
   console.log("fetch nl list...");
   fetchNL();
+}
+
+if (argv.usabis !== undefined) {
+  console.log("fetch usa bis list...");
+  fetchUsaBis();
 }
