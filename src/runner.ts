@@ -16,5 +16,8 @@ if (argv.calaw !== undefined) {
   console.log(`fetch ca law list...`);
   require('../lib/fetch_ca_law').fetchCAlaw();
 }
-
+if (argv.uscsl !== undefined) {
+  console.log(`fetch us csl list...`);
+  require('../lib/fetch_us_csl').fetchUScsl();
+}
 
