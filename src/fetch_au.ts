@@ -1,8 +1,7 @@
 import axios from "axios";
-var XLSX = require("xlsx");
+const XLSX = require("xlsx");
 
 export async function fetchAU(): Promise<{ [key: string]: any }[]> {
-
   // download au sanctions file-
   const resp = await axios({
     method: "GET",
@@ -19,21 +18,21 @@ export async function fetchAU(): Promise<{ [key: string]: any }[]> {
   const sheetName = workbook.SheetNames[0];
   console.log("sheetName ", sheetName);
 
-  //CONVERT SHEET TO JSON
+  // CONVERT SHEET TO JSON
   const auIndividuals = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
   console.log("au Individuals count ", auIndividuals.length);
 
   let res = [];
   for (const person of auIndividuals as any) {
-
     // console.log(
     //   `loop # ${++count} -- looping over ${person["Name of Individual or Entity"]}`
     // );
 
-    const p: any = {};
+    let p: any = {};
 
     p["Reference"] = person["Reference"] || "";
-    p["Name of Individual or Entity"] = person["Name of Individual or Entity"] || "";
+    p["Name of Individual or Entity"] =
+      person["Name of Individual or Entity"] || "";
     p["Type"] = person["Type"] || "";
     p["Name Type"] = person["Name Type"] || "";
     p["Date of Birth"] = person["Date of Birth"] || "";
@@ -50,9 +49,7 @@ export async function fetchAU(): Promise<{ [key: string]: any }[]> {
     console.log("docId ", docId);
 
     res.push(p);
-
   }
 
   return Promise.resolve(res);
-
 }
