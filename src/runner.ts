@@ -22,4 +22,9 @@ if (argv.calaw !== undefined) {
   require('../lib/fetch_ca_law').fetchCAlaw();
 }
 
+if (argv.bisnp !== undefined) {
+  console.log(`fetch usa bis np list...`);
+  require('../lib/state_gov__master_sanctions_chart').state_gov__master_sanctions_chart();
+}
+
 
