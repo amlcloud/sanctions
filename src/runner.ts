@@ -29,9 +29,15 @@ if (argv.calaw !== undefined) {
   fetchCAlaw();
 }
 
+if (argv.uscsl !== undefined) {
+  console.log(`fetch us csl list...`);
+  require('../lib/fetch_us_csl').fetchUScsl();
+}
+
 if (argv.uk !== undefined) {
   console.log("fetch uk list...");
   fetchUK();
+
 }
 
 if (argv.nl !== undefined) {

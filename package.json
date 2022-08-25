@@ -14,10 +14,11 @@
     "au": "node ./lib/runner.js --au",
     "wb": "node ./lib/runner.js --wb",
     "eu": "node ./lib/runner.js --eu",
+    "calaw": "node ./lib/runner.js --calaw",
+    "uscsl": "node ./lib/runner.js --uscsl",
     "uk": "node ./lib/runner.js --uk",
     "nl": "node ./lib/runner.js --nl",
-    "usadef": "node ./lib/runner.js --usadef",
-    "calaw": "node ./lib/runner.js --calaw"
+    "usadef": "node ./lib/runner.js --usadef"
   },
   "engines": {
     "node": "16"
