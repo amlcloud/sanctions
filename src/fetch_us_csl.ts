@@ -12,7 +12,7 @@ export async function fetchUScsl() {
   const response = await nodeFetch(API_URL, {
     method: "GET",
     headers: new nodeFetch.Headers({
-      apiKey: API_KEY,
+      "subscription-key": API_KEY,
     }),
   });
 
