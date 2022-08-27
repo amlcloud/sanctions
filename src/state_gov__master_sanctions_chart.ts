@@ -1,54 +1,36 @@
-//const PDFParser = require("pdf2json");
-const fs = require('fs');
-const nodeFetch = require("node-fetch");
-var pdf_table_extractor = require("pdf-table-extractor");
-const { PdfReader,Rule } = require("pdfreader");
+const pdf_table_extractor = require("pdf-table-extractor");
+const download = require('download-pdf')
 
 
 export async function state_gov__master_sanctions_chart(): Promise<{ [key: string]: any }[]> {
-
-    // download au sanctions file-
-  // const response = await nodeFetch('https://www.stnpmate.gov/wp-content/uploads/2022/04/MASTER-Sanctions-chart-4.8.22-1.pdf');
-  //  const buffer= await response.arrayBuffer();
-    // const pdfParser = new PDFParser();
-    
-    //       pdfParser.parseBuffer(buffer);
-    //       pdfParser.on("pdfParser_dataError",(errData :any)=> console.error(errData.parserError) );
-    //       pdfParser.on("pdfParser_dataReady", (pdfData:any) => {
-    //          // fs.writeFile("./F1040EZ.fields.json", JSON.stringify(pdfParser.getRawTextContent()), ()=>{console.log("Done.");});
-    //       });
-
-    let res: { [key: string]: any }[] = [];
-    const processItem = Rule.makeItemProcessor([
-        Rule.on(/^Updated April  8, 2022 \"(.*)\"$/)
-          .parseNextItemValue()
-          .then((value:any)=>console.log(value)),
-        Rule.on(/^c1$/).parseTable(3).then((value:any)=>console.log(value)),
-        Rule.on(/^Values\:/)
-          .accumulateAfterHeading()
-          .then((value:any)=>console.log(value)),
-      ]);
-      
-  //  pdf_table_extractor("./MASTER-Sanctions-chart-4.8.22-1.pdf",success,error);
-    new PdfReader().parseFileItems("./MASTER-Sanctions-chart-4.8.22-1.pdf", (err:any, item:any) => {
-        if (err) console.error("error:", err);
-        else processItem(item);
-      });
-      
-
-    return Promise.resolve(res);
-
-
-  
-}
-  
-
-//PDF parsed
-function success(result:any)
-{
-    fs.writeFile("./F1040EZ.fields.json", JSON.stringify(result), ()=>{console.log("Done.");});
-}
-function error(err:any)
-{
-   console.error('Error: ' + err);
+  let res: { [key: string]: any }[] = [];
+  const URLToDownload = "https://www.state.gov/wp-content/uploads/2022/04/MASTER-Sanctions-chart-4.8.22-1.pdf";
+  const option = {filename: "download.pdf"}
+  function downloadParse(URLToDownload: any, option: any) {
+    return new Promise((resolve: any, reject: any) => {
+    download(URLToDownload, option, function(err: any) {
+      if (err) throw err
+        pdf_table_extractor(option.filename, (result: any) => {
+          let tableHeaderArr: any = [];
+          result.pageTables[0].tables[1].map((item: any) => {
+            tableHeaderArr.push(item.replaceAll('\n',''))
+          })
+          let newrow: any = {};
+          for(let pageTable of result.pageTables) {
+            for(let table of pageTable.tables) {
+              if(table.join('').length)
+                tableHeaderArr.map((item: string, index: number) => {
+                  newrow[item] = table[index].replaceAll('\n','')
+                })
+            }
+            res.push(newrow)
+          }
+          resolve('resolved')
+        });
+      })
+    })
+  }
+  await downloadParse(URLToDownload, option)
+  console.log(res)
+  return Promise.resolve(res);
 }

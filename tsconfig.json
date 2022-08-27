@@ -6,7 +6,10 @@
     "outDir": "lib",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2017",
+    "lib": [
+      "ES2021.String"
+    ]
   },
   "compileOnSave": true,
   "include": [
