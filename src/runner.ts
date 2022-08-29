@@ -8,6 +8,8 @@ import { fetchEU } from "./fetch_eu";
 import { fetchCAlaw } from "./fetch_ca_law";
 import { fetchUSA } from "./fetch_usa";
 import { fetchNL } from "./fetch_nl";
+import { fetchCA } from "./fetch_ca";
+import { fetchUSA_nonSDN } from "./fetch_usa_nonSDN";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -43,4 +45,14 @@ if (argv.uk !== undefined) {
 if (argv.nl !== undefined) {
   console.log("fetch nl list...");
   fetchNL();
+}
+
+if (argv.ca !== undefined) {
+  console.log("fetch ca list...");
+  fetchCA();
+}
+
+if (argv.usanonsdn !== undefined) {
+  console.log("fetch usa non-sdn list...");
+  fetchUSA_nonSDN();
 }

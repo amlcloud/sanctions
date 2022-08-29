@@ -19,7 +19,9 @@
     "uscsl": "ts-node src/runner.ts --uscsl",
     "uk": "ts-node src/runner.ts --uk",
     "nl": "ts-node src/runner.ts --nl",
-    "usadef": "ts-node src/runner.ts --usadef"
+    "usadef": "ts-node src/runner.ts --usadef",
+    "ca": "ts-node src/runner.ts --ca",
+    "usanonsdn": "ts-node src/runner.ts --usanonsdn"
   },
   "engines": {
     "node": "16"
