@@ -18,7 +18,9 @@
     "uscsl": "node ./lib/runner.js --uscsl",
     "uk": "node ./lib/runner.js --uk",
     "nl": "node ./lib/runner.js --nl",
-    "usadef": "node ./lib/runner.js --usadef"
+    "usadef": "node ./lib/runner.js --usadef",
+    "ca": "node ./lib/runner.js --ca",
+    "usanonsdn": "node ./lib/runner.js --usanonsdn"
   },
   "engines": {
     "node": "16"
