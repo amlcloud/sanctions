@@ -18,7 +18,8 @@
     "uscsl": "node ./lib/runner.js --uscsl",
     "uk": "node ./lib/runner.js --uk",
     "nl": "node ./lib/runner.js --nl",
-    "usadef": "node ./lib/runner.js --usadef"
+    "usadef": "node ./lib/runner.js --usadef",
+    "easearch": "node ./lib/runner.js --easearch"
   },
   "engines": {
     "node": "16"
