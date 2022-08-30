@@ -1,21 +1,36 @@
+const yargs = require("yargs/yargs");
+const { hideBin } = require("yargs/helpers");
+const argv = yargs(hideBin(process.argv)).argv;
 
-const assert = require('assert');
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
-const argv = yargs(hideBin(process.argv)).argv
+import { fetchUK } from "./fetch_uk";
+import { fetchAU } from "./fetch_au";
+import { fetchEU } from "./fetch_eu";
+import { fetchCAlaw } from "./fetch_ca_law";
+import { fetchUSA } from "./fetch_usa";
+import { fetchNL } from "./fetch_nl";
+import { fetchCA } from "./fetch_ca";
+import { fetchUSA_nonSDN } from "./fetch_usa_nonSDN";
 
 if (argv.au !== undefined) {
-  console.log(`fetch au list...`);
-  require('../lib/fetch_au').fetchAU();
+  console.log("fetch au list...");
+  fetchAU();
 }
+
 if (argv.eu !== undefined) {
-  console.log(`fetch eu list...`);
-  require('../lib/fetch_eu').fetchEU();
+  console.log("fetch eu list...");
+  fetchEU();
 }
+
+if (argv.usa !== undefined) {
+  console.log("fetch usa list...");
+  fetchUSA();
+}
+
 if (argv.calaw !== undefined) {
-  console.log(`fetch ca law list...`);
-  require('../lib/fetch_ca_law').fetchCAlaw();
+  console.log("fetch ca law list...");
+  fetchCAlaw();
 }
+
 if (argv.uscsl !== undefined) {
   console.log(`fetch us csl list...`);
   require('../lib/fetch_us_csl').fetchUScsl();
@@ -25,3 +40,23 @@ if (argv.che !== undefined) {
   require('../lib/fetch_che').fetchCHE();
 }
 
+if (argv.uk !== undefined) {
+  console.log("fetch uk list...");
+  fetchUK();
+
+}
+
+if (argv.nl !== undefined) {
+  console.log("fetch nl list...");
+  fetchNL();
+}
+
+if (argv.ca !== undefined) {
+  console.log("fetch ca list...");
+  fetchCA();
+}
+
+if (argv.usanonsdn !== undefined) {
+  console.log("fetch usa non-sdn list...");
+  fetchUSA_nonSDN();
+}
