@@ -51,7 +51,8 @@ export async function fetchIP(): Promise<any[]> {
                 "resultPerPage": RESULTSPERPAGE,
             })
         })
-        for (let j of temp2._embedded.notices) {
+        let parsedRes = JSON.parse(response)
+        for (let j of parsedRes._embedded.notices) {
             const person: person = {}
             person.forename = j.forename;
             person.dateOfBirth = j.date_of_birth;
