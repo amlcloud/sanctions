@@ -21,7 +21,8 @@
     "nl": "ts-node src/runner.ts --nl",
     "usadef": "ts-node src/runner.ts --usadef",
     "ca": "ts-node src/runner.ts --ca",
-    "usanonsdn": "ts-node src/runner.ts --usanonsdn"
+    "usanonsdn": "ts-node src/runner.ts --usanonsdn",
+    "che": "ts-node src/runner.ts --che"
   },
   "engines": {
     "node": "16"
