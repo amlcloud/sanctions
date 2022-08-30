@@ -35,6 +35,10 @@ if (argv.uscsl !== undefined) {
   console.log(`fetch us csl list...`);
   require('../lib/fetch_us_csl').fetchUScsl();
 }
+if (argv.che !== undefined) {
+  console.log(`fetch che list...`);
+  require('../lib/fetch_che').fetchCHE();
+}
 
 if (argv.uk !== undefined) {
   console.log("fetch uk list...");
