@@ -22,7 +22,7 @@ export async function fetchIP(): Promise<any[]> {
         method: "GET",
         body: new nodeFetch.body({
             "page": 1,
-            "resultPerPage": 160
+            "resultPerPage": RESULTSPERPAGE
         })
     })
     let temp2 = JSON.parse(temp1)
