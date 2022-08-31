@@ -11,3 +11,5 @@ export { fetchUSA } from "./fetch_usa";
 export { fetchUK } from "./fetch_uk";
 
 export { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforcement_order_listing";
+
+export { api_trade_gov__csl_consolidated} from "./api_trade_gov__csl_consolidated";
