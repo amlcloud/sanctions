@@ -8,6 +8,8 @@ import { fetchEU } from "./fetch_eu";
 import { fetchCAlaw } from "./fetch_ca_law";
 import { fetchUSA } from "./fetch_usa";
 import { fetchNL } from "./fetch_nl";
+import { fetchUScsl } from "./fetch_us_csl";
+import { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforcement_order_listing";
 import { fetchCA } from "./fetch_ca";
 import { fetchUSA_nonSDN } from "./fetch_usa_nonSDN";
 
@@ -33,7 +35,7 @@ if (argv.calaw !== undefined) {
 
 if (argv.uscsl !== undefined) {
   console.log(`fetch us csl list...`);
-  require('../lib/fetch_us_csl').fetchUScsl();
+  fetchUScsl();
 }
 if (argv.che !== undefined) {
   console.log(`fetch che list...`);
@@ -51,6 +53,11 @@ if (argv.nl !== undefined) {
   fetchNL();
 }
 
+
+if (argv.easearch !== undefined) {
+  console.log("fetch ots enforcement order list ...");
+  occ_gov__ots_enforcement_order_listing();
+}
 if (argv.ca !== undefined) {
   console.log("fetch ca list...");
   fetchCA();
