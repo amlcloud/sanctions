@@ -14,6 +14,10 @@ type person = {
 const RESULTSPERPAGE = 160;
 const API_URL = "https://ws-public.interpol.int/notices/v1/red"
 
+/**
+ * Accesses Interpol Notices API and retrieves Red Notice data
+ * @returns {any[]} Array of JS Objects with red notice data
+ */
 export async function fetchIP(): Promise<any[]> {
     let res: any[] = [];
     // Response Object
@@ -29,18 +33,7 @@ export async function fetchIP(): Promise<any[]> {
     const pagelimit = Math.ceil(temp2.total/RESULTSPERPAGE);
     // Calculate Page limit for loop
 
-    for (let i of temp2._embedded.notices) {
-        const person: person = {}
-        person.forename = i.forename;
-        person.dateOfBirth = i.date_of_birth;
-        person.entityId = i.entity_id;
-        person.nationalities = i.nationalities;
-        person.name = i.name;
-        person.self = i.links.self.href;
-        person.images = i.links.images.href;
-        person.thumbnail = i.links.thumbnail.href;
-        res.push(person)
-    }
+    res = saveData(res, temp2)
     // Add 1st page of Red Noticed Individuals
 
     for (let i = 2; i <= pagelimit; i++) {
@@ -52,19 +45,24 @@ export async function fetchIP(): Promise<any[]> {
             })
         })
         let parsedRes = JSON.parse(response)
-        for (let j of parsedRes._embedded.notices) {
-            const person: person = {}
-            person.forename = j.forename;
-            person.dateOfBirth = j.date_of_birth;
-            person.entityId = j.entity_id;
-            person.nationalities = j.nationalities;
-            person.name = j.name;
-            person.self = j.links.self.href;
-            person.images = j.links.images.href;
-            person.thumbnail = j.links.thumbnail.href;
-            res.push(person)
-        }
+        res = saveData(res, parsedRes)
     }
     // Add remaining pages
     return Promise.resolve(res)
 }   
+
+function saveData(res: any, data: any): any {
+    for (let i of data._embedded.notices) {
+        const person: person = {}
+        person.forename = i.forename;
+        person.dateOfBirth = i.date_of_birth;
+        person.entityId = i.entity_id;
+        person.nationalities = i.nationalities;
+        person.name = i.name;
+        person.self = i.links.self.href;
+        person.images = i.links.images.href;
+        person.thumbnail = i.links.thumbnail.href;
+        res.push(person)
+    }
+    return res;
+}
