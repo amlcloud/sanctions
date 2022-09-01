@@ -14,4 +14,6 @@ export { fetchIP } from "./fetch_usa_interpol"
 
 export { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforcement_order_listing";
 
+export { api_trade_gov__csl_consolidated} from "./api_trade_gov__csl_consolidated";
+
 export { fetchUsaBis } from './fetch_usa_bis';
