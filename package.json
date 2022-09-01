@@ -1,5 +1,6 @@
 {
-  "name": "functions",
+  "name": "sanctions",
+  "version": "1.0.0",
   "scripts": {
     "cy:test": "./node_modules/.bin/cypress run",
     "lint": "eslint --ext .js,.ts .",
@@ -31,6 +32,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "axios": "^0.27.2",
+    "csv-parser": "^3.0.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
     "jsonpath": "^1.1.1",

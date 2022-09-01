@@ -52,18 +52,3 @@ if (argv.nl !== undefined) {
   console.log("fetch nl list...");
   fetchNL();
 }
-
-
-if (argv.easearch !== undefined) {
-  console.log("fetch ots enforcement order list ...");
-  occ_gov__ots_enforcement_order_listing();
-}
-if (argv.ca !== undefined) {
-  console.log("fetch ca list...");
-  fetchCA();
-}
-
-if (argv.usanonsdn !== undefined) {
-  console.log("fetch usa non-sdn list...");
-  fetchUSA_nonSDN();
-}
