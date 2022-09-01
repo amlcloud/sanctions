@@ -26,10 +26,8 @@ make sure the script exists for that runner in package.json, like so:
 To publish sanctions module:
 
 1. Create NPM acccount (https://npmjs.org)
-2. To login NPM account run this command on Command Line Interface:
-    npm login
-3. To publish Sanctions package run this command:
-    npm publish
+2. Generate npm token from npmjs type as automation token
+3. Add NPM_TOKEN as secret token in github (the value should be npm automation token)
 
 make sure the the sanctions module version updated in package.json, like so:
   "version": "updated version"

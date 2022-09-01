@@ -58,5 +58,8 @@
     "tslib": "^2.4.0",
     "typescript": "^4.5.4"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "private": true
 }
