@@ -46,14 +46,12 @@ if (argv.che !== undefined) {
 if (argv.uk !== undefined) {
   console.log("fetch uk list...");
   fetchUK();
-
 }
 
 if (argv.nl !== undefined) {
   console.log("fetch nl list...");
   fetchNL();
 }
-
 
 if (argv.easearch !== undefined) {
   console.log("fetch ots enforcement order list ...");
@@ -68,6 +66,7 @@ if (argv.usanonsdn !== undefined) {
   console.log("fetch usa non-sdn list...");
   fetchUSA_nonSDN();
 }
+
 if (argv.usacslapi !== undefined) {
   console.log("fetch usa csl api list...");
   api_trade_gov__csl_consolidated();

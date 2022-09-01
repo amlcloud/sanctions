@@ -7,6 +7,6 @@ typings/
 
 # Node.js dependency directory
 node_modules/
-
+yarn.lock
 # Cypress videos
 cypress/videos
