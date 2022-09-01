@@ -17,3 +17,5 @@ export { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforceme
 export { api_trade_gov__csl_consolidated} from "./api_trade_gov__csl_consolidated";
 
 export { fetchUsaBis } from './fetch_usa_bis';
+
+export { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
