@@ -19,6 +19,8 @@ module.exports = {
   },
   ignorePatterns: [
     "/lib/**/*", // Ignore built files.
+    "cypress/**/*",
+    "cypress.config.ts",
   ],
   plugins: ["@typescript-eslint", "import"],
   rules: {
