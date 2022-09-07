@@ -13,6 +13,7 @@ import { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforceme
 import { fetchCA } from "./fetch_ca";
 import { fetchUSA_nonSDN } from "./fetch_usa_nonSDN";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
+import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -70,4 +71,9 @@ if (argv.usanonsdn !== undefined) {
 if (argv.usacslapi !== undefined) {
   console.log("fetch usa csl api list...");
   api_trade_gov__csl_consolidated();
+}
+
+if (argv.fiuua !== undefined) {
+  console.log("fetch ukraine list...");
+  fiu_gov_ua__black_list_full();
 }

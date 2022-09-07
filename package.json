@@ -25,7 +25,8 @@
     "usanonsdn": "ts-node src/runner.ts --usanonsdn",
     "che": "ts-node src/runner.ts --che",
     "easearch": "ts-node src/runner.ts --easearch",
-    "usacslapi": "ts-node src/runner.ts --usacslapi"
+    "usacslapi": "ts-node src/runner.ts --usacslapi",
+    "fiuua": "ts-node src/runner.ts --fiuua"
   },
   "engines": {
     "node": "16"
