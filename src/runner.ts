@@ -11,7 +11,7 @@ import { fetchNL } from "./fetch_nl";
 import { fetchUScsl } from "./fetch_us_csl";
 import { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforcement_order_listing";
 import { fetchCA } from "./fetch_ca";
-import { fetchUSA_nonSDN } from "./fetch_usa_nonSDN";
+import { fetchUSA_nonSDN } from "./fetch_usa_non_sdn";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 
