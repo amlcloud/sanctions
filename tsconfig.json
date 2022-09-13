@@ -9,7 +9,7 @@
     "strict": true,
     "target": "es2017",
     "lib": [
-      "ES2021.String"
+      "ES2021.String", "DOM"
     ]
   },
   "compileOnSave": true,
