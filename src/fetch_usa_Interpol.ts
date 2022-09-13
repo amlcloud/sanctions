@@ -11,6 +11,7 @@ type person = {
     thumbnail?: string;
 }
 
+
 const RESULTSPERPAGE = 160;
 const API_URL = "https://ws-public.interpol.int/notices/v1/red"
 
