@@ -18,4 +18,6 @@ export { api_trade_gov__csl_consolidated} from "./api_trade_gov__csl_consolidate
 
 export { fetchUsaBis } from './fetch_usa_bis';
 
+export { fetchIndia } from './fetch_india';
+
 export { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
