@@ -1,7 +1,10 @@
 {
   "name": "sanctions",
   "version": "1.0.0",
-  "repository": "git://github.com/amlcloud/sanctions.git",
+  "repository": {
+    "type": "git",
+    "url": "//github.com/amlcloud/sanctions.git"
+  },
   "scripts": {
     "cy:test": "./node_modules/.bin/cypress run",
     "lint": "eslint --ext .js,.ts .",
