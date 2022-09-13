@@ -16,7 +16,8 @@
     "eu": "node ./lib/runner.js --eu",
     "usadef": "node ./lib/runner.js --usadef",
     "calaw": "node ./lib/runner.js --calaw",
-    "bisnp": "node ./lib/runner.js --bisnp"
+    "bisnp": "node ./lib/runner.js --bisnp",
+    "indiaorgs": "node ./lib/runner.js --indiaorgs"
   },
   "engines": {
     "node": "16"

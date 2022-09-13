@@ -28,3 +28,9 @@ if (argv.bisnp !== undefined) {
 }
 
 
+if (argv.indiaorgs !== undefined) {
+  console.log(`fetch usa bis np list...`);
+  require('../lib/fetch_india').fetchIndia();
+}
+
+

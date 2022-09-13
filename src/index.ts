@@ -8,3 +8,5 @@ export { fetchEU } from './fetch_eu';
 export { fetchNL } from './fetch_nl';
 
 export { fetchUSA } from './fetch_usa';
+
+export { fetchIndia } from './fetch_india';
