@@ -14,6 +14,7 @@ import { fetchCA } from "./fetch_ca";
 import { fetchUSA_nonSDN } from "./fetch_usa_non_sdn";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
+import { fetchEgypt } from "./fetch_egypt";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -76,4 +77,9 @@ if (argv.usacslapi !== undefined) {
 if (argv.fiuua !== undefined) {
   console.log("fetch ukraine list...");
   fiu_gov_ua__black_list_full();
+}
+
+if (argv.egyptorgs !== undefined) {
+  console.log("fetch Egypt list...");
+  fetchEgypt();
 }
