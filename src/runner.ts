@@ -3,6 +3,7 @@ const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv)).argv;
 
 import { fetchUK } from "./fetch_uk";
+import { fetchUN } from "./fetch_un";
 import { fetchAU } from "./fetch_au";
 import { fetchEU } from "./fetch_eu";
 import { fetchCAlaw } from "./fetch_ca_law";
@@ -18,6 +19,11 @@ import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 if (argv.au !== undefined) {
   console.log("fetch au list...");
   fetchAU();
+}
+
+if (argv.un !== undefined) {
+  console.log("fetch UN list...");
+  fetchUN();
 }
 
 if (argv.eu !== undefined) {
