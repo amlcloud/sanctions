@@ -24,7 +24,7 @@ export async function fetchUN(): Promise<{ [key: string]: any }[]> {
       for (const ind of individualsArray) {
         res.push(ind);
       }
-
-      resolve(result);
+      console.log(res)
+      resolve(res);
     }));
 }

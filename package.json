@@ -18,6 +18,7 @@
     "test": "mocha --reporter spec",
     "test-nl": "mocha ./test/fetch_nl.test.js  --reporter spec",
     "au": "ts-node src/runner.ts --au",
+    "un": "ts-node src/runner.ts --un",
     "wb": "ts-node src/runner.ts --wb",
     "eu": "ts-node src/runner.ts --eu",
     "calaw": "ts-node src/runner.ts --calaw",
