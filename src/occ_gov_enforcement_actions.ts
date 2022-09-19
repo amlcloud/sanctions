@@ -18,7 +18,7 @@ type Individual = {
     notes?:string;
 }
 
-export async function occ_gov__ots_enforcement_order_listing(): Promise<{ [key: string]: any }[]> {
+export async function occ_gov_enforcement_actions(): Promise<{ [key: string]: any }[]> {
   // download ots enforcement order list
   const response = await nodeFetch("https://occ.gov/static/ots/enforcement/ots-enforcement-order-listing.xlsx");
   const bodyXML = await response.arrayBuffer();

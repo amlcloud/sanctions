@@ -10,7 +10,7 @@ type Individual = {
     correctedNoticeDate?: Date;
 }
 
-export async function fetchUSA(): Promise<{ [key: string]: any }[]> {
+export async function pmddtc_state_gov__aeca_dsl(): Promise<{ [key: string]: any }[]> {
   // download au sanctions file-
   const response = await nodeFetch("https://www.pmddtc.state.gov/sys_attachment.do?sys_id=c1d49a191b0f70d0d1f1ea02f54bcb74");
   const bodyXML = await response.arrayBuffer();

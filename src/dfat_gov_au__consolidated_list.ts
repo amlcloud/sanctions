@@ -1,7 +1,7 @@
 import axios from "axios";
 const XLSX = require("xlsx");
 
-export async function fetchAU(): Promise<{ [key: string]: any }[]> {
+export async function dfat_gov_au__consolidated_list(): Promise<{ [key: string]: any }[]> {
   // download au sanctions file-
   const resp = await axios({
     method: "GET",

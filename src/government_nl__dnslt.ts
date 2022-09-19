@@ -11,7 +11,7 @@ type NlIndividual = {
   linkOfOfficialNotification?: string;
 }
 
-export async function fetchNL(): Promise<{ [key: string]: any }[]> {
+export async function government_nl__dnslt(): Promise<{ [key: string]: any }[]> {
   // eslint-disable-next-line max-len
   const response = await nodeFetch("https://www.government.nl/binaries/government/documenten/reports/2016/01/15/national-terrorism-list/eng-terrorismelijst.ods");
   const bodyXML = await response.arrayBuffer();

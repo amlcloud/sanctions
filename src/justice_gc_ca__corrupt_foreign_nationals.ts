@@ -2,7 +2,7 @@ const nodeFetch = require("node-fetch");
 import * as Xml2js from "xml2js";
 // import { createHash } from 'node:crypto';
 
-export async function fetchCAlaw(): Promise<{ [key: string]: any }[]> {
+export async function justice_gc_ca__corrupt_foreign_nationals(): Promise<{ [key: string]: any }[]> {
   const response = await nodeFetch("https://laws-lois.justice.gc.ca/eng/XML/SOR-2017-233.xml");
   const bodyXML = await response.text();
 

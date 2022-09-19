@@ -17,7 +17,7 @@ type Enclosure = {
   type: string;
 };
 
-export async function fetchEU(): Promise<{ [key: string]: any }[]> {
+export async function ec_europa_eu__sanctions_list(): Promise<{ [key: string]: any }[]> {
   const url: string = await getInitialUrl();
   const response = await nodeFetch(url);
   const bodyXML = await response.text();

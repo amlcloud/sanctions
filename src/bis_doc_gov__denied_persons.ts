@@ -28,7 +28,7 @@ function parseCSV() {
 }
 
 // export async function fetchUsaBis() {
-export async function fetchUsaBis(): Promise<{ [key: string]: any }[]> {
+export async function bis_doc_gov__denied_persons(): Promise<{ [key: string]: any }[]> {
   
   await parseCSV()
   

@@ -3,15 +3,15 @@ const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv)).argv;
 
 import { fetchUK } from "./fetch_uk";
-import { fetchAU } from "./fetch_au";
-import { fetchEU } from "./fetch_eu";
-import { fetchCAlaw } from "./fetch_ca_law";
-import { fetchUSA } from "./fetch_usa";
-import { fetchNL } from "./fetch_nl";
+import { fetchAU } from "./dfat_gov_au__consolidated_list";
+import { fetchEU } from "./ec_europa_eu__sanctions_list";
+import { fetchCAlaw } from "./justice_gc_ca__corrupt_foreign_nationals";
+import { fetchUSA } from "./pmddtc_state_gov__aeca_dsl";
+import { fetchNL } from "./government_nl__dnslt";
 import { fetchUScsl } from "./fetch_us_csl";
-import { occ_gov__ots_enforcement_order_listing } from "./occ_gov__ots_enforcement_order_listing";
-import { fetchCA } from "./fetch_ca";
-import { fetchUSA_nonSDN } from "./fetch_usa_non_sdn";
+import { occ_gov__ots_enforcement_order_listing } from "./occ_gov_enforcement_actions";
+import { fetchCA } from "./gc_ca__casl";
+import { fetchUSA_nonSDN } from "./treasury_gov__sdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 
