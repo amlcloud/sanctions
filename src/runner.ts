@@ -3,36 +3,36 @@ const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv)).argv;
 
 import { fetchUK } from "./fetch_uk";
-import { fetchAU } from "./dfat_gov_au__consolidated_list";
-import { fetchEU } from "./ec_europa_eu__sanctions_list";
-import { fetchCAlaw } from "./justice_gc_ca__corrupt_foreign_nationals";
-import { fetchUSA } from "./pmddtc_state_gov__aeca_dsl";
-import { fetchNL } from "./government_nl__dnslt";
+import { dfat_gov_au__consolidated_list } from "./dfat_gov_au__consolidated_list";
+import { ec_europa_eu__sanctions_list } from "./ec_europa_eu__sanctions_list";
+import { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
+import { pmddtc_state_gov__aeca_dsl } from "./pmddtc_state_gov__aeca_dsl";
+import { government_nl__dnslt } from "./government_nl__dnslt";
 import { fetchUScsl } from "./fetch_us_csl";
-import { occ_gov__ots_enforcement_order_listing } from "./occ_gov_enforcement_actions";
-import { fetchCA } from "./gc_ca__casl";
-import { fetchUSA_nonSDN } from "./treasury_gov__sdnl";
+import { occ_gov_enforcement_actions } from "./occ_gov_enforcement_actions";
+import { gc_ca__casl } from "./gc_ca__casl";
+import { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
-  fetchAU();
+  dfat_gov_au__consolidated_list();
 }
 
 if (argv.eu !== undefined) {
   console.log("fetch eu list...");
-  fetchEU();
+  ec_europa_eu__sanctions_list();
 }
 
 if (argv.usa !== undefined) {
   console.log("fetch usa list...");
-  fetchUSA();
+  pmddtc_state_gov__aeca_dsl();
 }
 
 if (argv.calaw !== undefined) {
   console.log("fetch ca law list...");
-  fetchCAlaw();
+  justice_gc_ca__corrupt_foreign_nationals();
 }
 
 if (argv.uscsl !== undefined) {
@@ -51,21 +51,21 @@ if (argv.uk !== undefined) {
 
 if (argv.nl !== undefined) {
   console.log("fetch nl list...");
-  fetchNL();
+  government_nl__dnslt();
 }
 
 if (argv.easearch !== undefined) {
   console.log("fetch ots enforcement order list ...");
-  occ_gov__ots_enforcement_order_listing();
+  occ_gov_enforcement_actions();
 }
 if (argv.ca !== undefined) {
   console.log("fetch ca list...");
-  fetchCA();
+  gc_ca__casl();
 }
 
 if (argv.usanonsdn !== undefined) {
   console.log("fetch usa non-sdn list...");
-  fetchUSA_nonSDN();
+  treasury_gov__sdnl();
 }
 
 if (argv.usacslapi !== undefined) {
