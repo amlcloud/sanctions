@@ -14,6 +14,7 @@ import { gc_ca__casl } from "./gc_ca__casl";
 import { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
+import { publicsafety_gc_ca__counter_terrorism_entity } from "./publicsafety_gc_ca__counter_terrorism_entity";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -76,4 +77,9 @@ if (argv.usacslapi !== undefined) {
 if (argv.fiuua !== undefined) {
   console.log("fetch ukraine list...");
   fiu_gov_ua__black_list_full();
+}
+
+if(argv.cacnt != undefined){
+  console.log("fetch canada counter terrorism entity...");
+  publicsafety_gc_ca__counter_terrorism_entity();
 }

@@ -14,7 +14,7 @@ export { fetchIP } from "./fetch_usa___interpol"
 
 export { occ_gov_enforcement_actions } from "./occ_gov_enforcement_actions";
 
-export { api_trade_gov__csl_consolidated} from "./api_trade_gov__csl_consolidated";
+export { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 
 export { bis_doc_gov__denied_persons } from './bis_doc_gov__denied_persons';
 
@@ -25,3 +25,5 @@ export { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
 
 export { gc_ca__casl } from "./gc_ca__casl";
+
+export { publicsafety_gc_ca__counter_terrorism_entity } from "./publicsafety_gc_ca__counter_terrorism_entity";

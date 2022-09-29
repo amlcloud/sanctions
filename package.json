@@ -30,7 +30,8 @@
     "che": "ts-node src/runner.ts --che",
     "easearch": "ts-node src/runner.ts --easearch",
     "usacslapi": "ts-node src/runner.ts --usacslapi",
-    "fiuua": "ts-node src/runner.ts --fiuua"
+    "fiuua": "ts-node src/runner.ts --fiuua",
+    "cacnt": "ts-node src/runner.ts --cacnt"
   },
   "engines": {
     "node": "16"
