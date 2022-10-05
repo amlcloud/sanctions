@@ -14,6 +14,7 @@ import { gc_ca__casl } from "./gc_ca__casl";
 import { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
+import { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -76,4 +77,8 @@ if (argv.usacslapi !== undefined) {
 if (argv.fiuua !== undefined) {
   console.log("fetch ukraine list...");
   fiu_gov_ua__black_list_full();
+}
+if (argv.frnfr !== undefined) {
+  console.log("fetch france nfr list...");
+  dgtresor_gouv_fr__national_freeze_registry();
 }

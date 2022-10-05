@@ -25,3 +25,5 @@ export { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
 
 export { gc_ca__casl } from "./gc_ca__casl";
+
+export { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
