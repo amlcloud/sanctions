@@ -9,12 +9,13 @@
     "strict": true,
     "target": "es2017",
     "lib": [
-      "ES2021.String", "DOM"
+      "ES2021.String",
+      "DOM"
     ],
     "declaration": true
   },
   "compileOnSave": true,
   "include": [
-    "src",
- "sanctions.d.ts"  ]
+    "src"
+  ]
 }
