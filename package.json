@@ -37,11 +37,6 @@
   },
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "files": [
-    "lib/**/*.js",
-    "lib/**/*.d.ts",
-    "lib/index.d.ts"
-  ],
   "dependencies": {
     "axios": "^0.27.2",
     "csv-parser": "^3.0.0",
