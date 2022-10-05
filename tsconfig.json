@@ -10,7 +10,8 @@
     "target": "es2017",
     "lib": [
       "ES2021.String", "DOM"
-    ]
+    ],
+    "declaration": true
   },
   "compileOnSave": true,
   "include": [
