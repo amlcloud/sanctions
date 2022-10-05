@@ -64,5 +64,6 @@
     "tslib": "^2.4.0",
     "typescript": "^4.5.4"
   },
-  "private": true
+  "private": true,
+  "type": "module"
 }
