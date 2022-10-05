@@ -1,4 +1,3 @@
-declare module 'sanctions';
 export { un_org__consolidated_individuals } from "./un_org__consolidated_individuals";
 export { dfat_gov_au__consolidated_list } from "./dfat_gov_au__consolidated_list";
 export { ec_europa_eu__sanctions_list } from "./ec_europa_eu__sanctions_list";
