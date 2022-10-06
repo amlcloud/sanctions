@@ -2,9 +2,9 @@ var nodeFetch = require("node-fetch");
 import * as Xml2js from 'xml2js';
 import { createHash } from 'node:crypto';
 
-export async function gc_ca__casl(): Promise<{ [key: string]: any }[]> {
+export async function treasury_gov__nonsdnl(): Promise<{ [key: string]: any }[]> {
 //   const listId: string = 'international.gc.ca';
-  const response = await nodeFetch('https://www.international.gc.ca/world-monde/assets/office_docs/international_relations-relations_internationales/sanctions/sema-lmes.xml');
+  const response = await nodeFetch('https://www.treasury.gov/ofac/downloads/consolidated/consolidated.xml');
   const bodyXML = await response.text();
 
   var parseString = (new Xml2js.Parser({ explicitArray: false }))
@@ -21,7 +21,7 @@ export async function gc_ca__casl(): Promise<{ [key: string]: any }[]> {
       console.dir(`fetched list document with hash: ${hash}`)
 
         
-      const individualsArray = result['data-set']['record'];
+      const individualsArray = result['sdnList']['sdnEntry'];
       console.log(`individuals count: ${individualsArray}`)
 
       for (const ind of individualsArray) {

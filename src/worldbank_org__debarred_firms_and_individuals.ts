@@ -2,7 +2,7 @@ const nodeFetch = require("node-fetch");
 import { createHash } from "node:crypto";
 
 
-export async function fetchWB() {
+export async function worldbank_org__debarred_firms_and_individuals() {
   // some configs
   const API_URL =
     "https://apigwext.worldbank.org/dvsvc/v1.0/json/APPLICATION/ADOBE_EXPRNCE_MGR/FIRM/SANCTIONED_FIRM";

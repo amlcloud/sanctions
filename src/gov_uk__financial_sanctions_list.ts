@@ -1,7 +1,7 @@
 const nodeFetch = require("node-fetch");
 import * as Xml2js from "xml2js";
 
-export async function fetchUK(): Promise<{ [key: string]: any }[]> {
+export async function gov_uk__financial_sanctions_list(): Promise<{ [key: string]: any }[]> {
   const response = await nodeFetch(
       "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.xml"
   );

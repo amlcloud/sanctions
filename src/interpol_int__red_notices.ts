@@ -18,7 +18,7 @@ const API_URL = "https://ws-public.interpol.int/notices/v1/red"
  * Accesses Interpol Notices API and retrieves Red Notice data
  * @returns {any[]} Array of JS Objects with red notice data
  */
-export async function fetchIP(): Promise<any[]> {
+export async function interpol_int__red_notices(): Promise<any[]> {
     let res: any[] = [];
     // Response Object
 
