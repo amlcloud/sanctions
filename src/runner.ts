@@ -2,19 +2,20 @@ const yargs = require("yargs/yargs");
 const { hideBin } = require("yargs/helpers");
 const argv = yargs(hideBin(process.argv)).argv;
 
-import { fetchUK } from "./fetch_uk";
+import { gov_uk__financial_sanctions_list } from "./gov_uk__financial_sanctions_list";
 import { dfat_gov_au__consolidated_list } from "./dfat_gov_au__consolidated_list";
 import { ec_europa_eu__sanctions_list } from "./ec_europa_eu__sanctions_list";
 import { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
 import { pmddtc_state_gov__aeca_dsl } from "./pmddtc_state_gov__aeca_dsl";
-import { government_nl__dnslt } from "./government_nl__dnslt";
+import { government_nl__dutch_national_sanctions_list } from "./government_nl__dutch_national_sanctions_list";
 import { fetchUScsl } from "./fetch_us_csl";
-import { occ_gov_enforcement_actions } from "./occ_gov_enforcement_actions";
-import { gc_ca__casl } from "./gc_ca__casl";
-import { treasury_gov__sdnl } from "./treasury_gov__sdnl";
+import { occ_gov__enforcement_actions } from "./occ_gov__enforcement_actions";
+import { gc_ca__consol_autonomous_sanctions } from "./gc_ca__consol_autonomous_sanctions";
+import { treasury_gov__nonsdnl } from "./treasury_gov__nonsdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
-import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
+//import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 import { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
+import { fiu_gov_ua__terrorist_activity } from "./fiu_gov_ua__terrorist_activity";
 
 if (argv.au !== undefined) {
   console.log("fetch au list...");
@@ -47,26 +48,26 @@ if (argv.che !== undefined) {
 
 if (argv.uk !== undefined) {
   console.log("fetch uk list...");
-  fetchUK();
+  gov_uk__financial_sanctions_list();
 }
 
 if (argv.nl !== undefined) {
   console.log("fetch nl list...");
-  government_nl__dnslt();
+  government_nl__dutch_national_sanctions_list();
 }
 
 if (argv.easearch !== undefined) {
   console.log("fetch ots enforcement order list ...");
-  occ_gov_enforcement_actions();
+  occ_gov__enforcement_actions();
 }
 if (argv.ca !== undefined) {
   console.log("fetch ca list...");
-  gc_ca__casl();
+  gc_ca__consol_autonomous_sanctions();
 }
 
 if (argv.usanonsdn !== undefined) {
   console.log("fetch usa non-sdn list...");
-  treasury_gov__sdnl();
+  treasury_gov__nonsdnl();
 }
 
 if (argv.usacslapi !== undefined) {
@@ -76,7 +77,7 @@ if (argv.usacslapi !== undefined) {
 
 if (argv.fiuua !== undefined) {
   console.log("fetch ukraine list...");
-  fiu_gov_ua__black_list_full();
+  fiu_gov_ua__terrorist_activity();
 }
 if (argv.frnfr !== undefined) {
   console.log("fetch france nfr list...");
