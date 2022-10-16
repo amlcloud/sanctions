@@ -13,6 +13,8 @@ import { occ_gov__enforcement_actions } from "./occ_gov__enforcement_actions";
 import { gc_ca__consol_autonomous_sanctions } from "./gc_ca__consol_autonomous_sanctions";
 import { treasury_gov__nonsdnl } from "./treasury_gov__nonsdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
+//import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
+import { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 import { fiu_gov_ua__terrorist_activity } from "./fiu_gov_ua__terrorist_activity";
 
 if (argv.au !== undefined) {
@@ -76,4 +78,8 @@ if (argv.usacslapi !== undefined) {
 if (argv.fiuua !== undefined) {
   console.log("fetch ukraine list...");
   fiu_gov_ua__terrorist_activity();
+}
+if (argv.frnfr !== undefined) {
+  console.log("fetch france nfr list...");
+  dgtresor_gouv_fr__national_freeze_registry();
 }

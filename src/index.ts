@@ -18,9 +18,13 @@ export { bis_doc_gov__denied_persons } from './bis_doc_gov__denied_persons';
 export { occ_gov__enforcement_actions } from "./occ_gov__enforcement_actions";
 // ecfr_gov__militaryenduser
 // ecfr_gov__unverified
-// dgtresor_gouv_fr__national_freeze_registry
+
 export { gc_ca__consol_autonomous_sanctions } from './gc_ca__consol_autonomous_sanctions';
 export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
+
+//export { gc_ca__casl } from "./gc_ca__casl";
+
+export { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 //justice_gc_ca__cfn_tunisia
 //justice_gc_ca__cfn_ukraine
 //publicsafety_gc_ca__counter_terrorism_entity

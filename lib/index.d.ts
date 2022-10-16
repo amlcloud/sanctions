@@ -12,5 +12,6 @@ export { bis_doc_gov__denied_persons } from './bis_doc_gov__denied_persons';
 export { occ_gov__enforcement_actions } from "./occ_gov__enforcement_actions";
 export { gc_ca__consol_autonomous_sanctions } from './gc_ca__consol_autonomous_sanctions';
 export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
+export { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 export { interpol_int__red_notices } from "./interpol_int__red_notices";
 export { fiu_gov_ua__terrorist_activity } from "./fiu_gov_ua__terrorist_activity";
