@@ -46,6 +46,7 @@ export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corru
 
 export { publicsafety_gc_ca__counter_terrorism_entity } from "./publicsafety_gc_ca__counter_terrorism_entity";
 
+export { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 //justice_gc_ca__cfn_tunisia
 //justice_gc_ca__cfn_ukraine
 //publicsafety_gc_ca__counter_terrorism_entity

@@ -15,6 +15,7 @@ import { treasury_gov__nonsdnl } from "./treasury_gov__nonsdnl";
 import { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 //import { fiu_gov_ua__black_list_full } from "./fiu_gov_ua__black_list_full";
 import { publicsafety_gc_ca__counter_terrorism_entity } from "./publicsafety_gc_ca__counter_terrorism_entity";
+import { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 import { fiu_gov_ua__terrorist_activity } from "./fiu_gov_ua__terrorist_activity";
 
 if (argv.au !== undefined) {
@@ -83,4 +84,9 @@ if (argv.fiuua !== undefined) {
 if(argv.cacnt != undefined){
   console.log("fetch canada counter terrorism entity...");
   publicsafety_gc_ca__counter_terrorism_entity();
+}
+
+if (argv.frnfr !== undefined) {
+  console.log("fetch france nfr list...");
+  dgtresor_gouv_fr__national_freeze_registry();
 }

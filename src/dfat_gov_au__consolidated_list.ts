@@ -1,19 +1,26 @@
-import axios from "axios";
+// import axios from "axios";
 const XLSX = require("xlsx");
+import fetch from 'node-fetch';
 
 export async function dfat_gov_au__consolidated_list(): Promise<{ [key: string]: any }[]> {
   console.log("get list...");
   // download au sanctions file-
-  const resp = await axios({
-    method: "GET",
-    url: "https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xls",
-    responseType: "arraybuffer",
-  });
+  // const resp = await axios({
+  //   method: "GET",
+  //   url: "https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xls",
+  //   responseType: "arraybuffer",
+  // });
 
-  // save file contents(in form of array buffer) in array
+  // // save file contents(in form of array buffer) in array
+  // const buffers: any = [];
+  // console.log("pushing to buffer");
+  // buffers.push(resp.data);
+
+  const response = await fetch('https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xls');
   const buffers: any = [];
   console.log("pushing to buffer");
-  buffers.push(resp.data);
+  buffers.push(await response.buffer());
+
   const buffer = Buffer.concat(buffers);
   const workbook = XLSX.read(buffer);
   const sheetName = workbook.SheetNames[0];

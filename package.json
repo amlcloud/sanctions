@@ -31,7 +31,9 @@
     "easearch": "ts-node src/runner.ts --easearch",
     "usacslapi": "ts-node src/runner.ts --usacslapi",
     "fiuua": "ts-node src/runner.ts --fiuua",
-    "cacnt": "ts-node src/runner.ts --cacnt"
+    "cacnt": "ts-node src/runner.ts --cacnt",
+    "frnfr": "ts-node src/runner.ts --frnfr"
+
   },
   "engines": {
     "node": "16"
@@ -39,7 +41,6 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "axios": "^0.27.2",
     "csv-parser": "^3.0.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0",
