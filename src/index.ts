@@ -15,7 +15,6 @@ export { un_org__consolidated_entities } from "./un_org__consolidated_entities";
 //export { treasury_gov__sdnl } from "./treasury_gov__sdnl";
 export { pmddtc_state_gov__aeca_dsl } from "./pmddtc_state_gov__aeca_dsl";
 
-//export { fetchUK } from "./fetch_uk";
 
 //export { fetchIP } from "./fetch_usa___interpol"
 

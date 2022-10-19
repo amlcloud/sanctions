@@ -6,16 +6,12 @@ export { worldbank_org__debarred_firms_and_individuals } from "./worldbank_org__
 export { un_org__consolidated_individuals } from "./un_org__consolidated_individuals";
 export { un_org__consolidated_entities } from "./un_org__consolidated_entities";
 export { pmddtc_state_gov__aeca_dsl } from "./pmddtc_state_gov__aeca_dsl";
-export { fetchUK } from "./fetch_uk";
-export { fetchIP } from "./fetch_usa___interpol";
-export { occ_gov_enforcement_actions } from "./occ_gov_enforcement_actions";
-export { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 export { treasury_gov__nonsdnl } from "./treasury_gov__nonsdnl";
+export { api_trade_gov__csl_consolidated } from "./api_trade_gov__csl_consolidated";
 export { bis_doc_gov__denied_persons } from './bis_doc_gov__denied_persons';
 export { occ_gov__enforcement_actions } from "./occ_gov__enforcement_actions";
 export { gc_ca__consol_autonomous_sanctions } from './gc_ca__consol_autonomous_sanctions';
 export { justice_gc_ca__corrupt_foreign_nationals } from "./justice_gc_ca__corrupt_foreign_nationals";
-export { gc_ca__casl } from "./gc_ca__casl";
 export { publicsafety_gc_ca__counter_terrorism_entity } from "./publicsafety_gc_ca__counter_terrorism_entity";
 export { dgtresor_gouv_fr__national_freeze_registry } from "./dgtresor_gouv_fr__national_freeze_registry";
 export { interpol_int__red_notices } from "./interpol_int__red_notices";
